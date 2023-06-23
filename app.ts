@@ -7,6 +7,10 @@ const router = Router();
 
 const server = Server.getInstance(router);
 
-server.startServer().then(()=>{
-    console.log(`Env: ${config.NODE_ENV}`);
-})
+server.startServer()
+    .then(() => {
+        console.log(`Env: ${config.NODE_ENV}`);
+    }).catch((error) => {
+        console.log(error);
+        process.exit()
+    })
