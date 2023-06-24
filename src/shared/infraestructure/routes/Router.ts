@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 
-export const Router = (apiRouter = 'router api' ) => {
+export const Router = (apiRouter: ExpressRouter ) => {
 
     const router = ExpressRouter();
 
@@ -17,7 +17,7 @@ export const Router = (apiRouter = 'router api' ) => {
 
 
     //todo Router api 
-    // router.use('api', apiRouter);
+    router.use('/api', apiRouter);
 
     return router;
 
