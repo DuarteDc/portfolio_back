@@ -2,7 +2,6 @@ import { AuthService } from './AuthService';
 
 import { ErrorHandler } from '../../../shared/domain/ErrorHandler.';
 import { AuthRepository } from '../../domain/auth/AuthRepository';
-
 export class AuthUseCase extends AuthService {
 
     constructor(private readonly authRepository: AuthRepository) {

@@ -13,10 +13,11 @@ export class MongoConnection {
             return this._instance
 
         this._instance = new MongoConnection();
+        this._instance.startConnection();
         return this._instance;
     }
 
-    public startConnection = async () => {
+    private startConnection = async () => {
         try {
             await mongoose.set('strictQuery', true);
             await mongoose.connect(config.APP_DATABASE_URL);

@@ -11,7 +11,7 @@ export class AuthController {
         try {
             const { email, password } = req.body;
             const response = await this.authUseCase.signIn(email, password);
-            res.json({ response });
+            res.json({ ...response });
         } catch (error) {
             console.log(error);
         }

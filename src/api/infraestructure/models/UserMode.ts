@@ -30,8 +30,6 @@ UserSchema.method('toJSON', function () {
     return user;
 });
 
-// UserSchema.plugin(mongoosePaginate);
-
 const UserModel = model('User', UserSchema);
 
 export default UserModel;

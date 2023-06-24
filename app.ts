@@ -7,10 +7,9 @@ import { MongoConnection } from './src/shared/infraestructure/db/MongoConnection
 
 const apiRouter = ApiRouter();
 const mainRouter = Router(apiRouter);
-const mongoConnection = MongoConnection.getInstance();
-const server = Server.getInstance(mainRouter, mongoConnection);
 
-const twoServer = Server.getInstance(mainRouter, mongoConnection);
+const server = Server.getInstance(mainRouter);
+MongoConnection.getInstance();
 
 server.startServer()
     .then(() => {
