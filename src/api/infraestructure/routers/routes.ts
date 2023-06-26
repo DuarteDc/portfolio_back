@@ -1,13 +1,15 @@
 import { Router } from 'express';
-import { createRoute } from '../../../shared/infraestructure/utils/createRoute';
 import authRouter from './auth';
-
+import projectRouter from './projects';
 
 export const ApiRouter = () => {
 
     const apiRouter = Router();
     
-    apiRouter.use('/auth', authRouter)
+    apiRouter
+        .use('/auth', authRouter)
+        .use('/project/', projectRouter)
+
 
     return apiRouter;
 

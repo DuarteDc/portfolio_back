@@ -1,16 +1,10 @@
 export interface ProjectEntity {
     _id         : string;
     name        : string;
-    desctiption : string;
+    description : string;
     status      : boolean;
-    images      : Array<ProjectImage>;
+    image       : string;
     createdAt   : Date;
     updatedAt   : Date;
-
-}
-
-interface ProjectImage {
-    _id: string;
-    url: string;
 
 }
